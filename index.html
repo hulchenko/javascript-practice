@@ -6,11 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <button>Start machine</button>
+    <p>The machine is stopped</p>
 <script>
-    //Practicing JavaScript
-    console.log("Hello,world!")
-</script>
-
+    //Initial greeting:
+    console.log('Hello!');
+    //Button task:
+const btn = document.querySelector('button');
+const txt = document.querySelector('p');
+btn.addEventListener('click', updateBtn);
+function updateBtn() {
+    if (btn.textContent === 'Start machine') {
+        btn.textContent = 'Stop machine';
+        txt.textContent = 'The machine has started!';
+    } else {
+        btn.textContent = 'Start machine';
+        txt.textContent = 'The machine is stopped';
+    }
+}
 </script>
 </body>
 </html>
