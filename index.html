@@ -26,12 +26,34 @@ function updateBtn() {
 }
 */
 
+/*
 //Button input task:
 const button = document.querySelector('button');
 
 button.onclick = function() {
     let name = prompt('What is your name?');
     alert('Hello'+name+', nice to see you!');
+}
+*/
+
+//Password prompt task:
+let userName = prompt("Input your name", "");
+if (userName === "Admin") {
+    let pass = prompt("Password?", "");
+    if (pass === "TheMaster") {
+        alert ("Welcome!");
+    } else if (pass === "" || pass === null) {
+        alert("Canceled");
+    } else {
+        alert ("Wrong password");
+    }
+    }
+
+} else if (userName === "" || userName === null) {
+alert ("Canceled");
+} else {
+    alert("I don't know you");
+}
 }
 
 </script>
