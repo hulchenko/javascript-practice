@@ -1,1 +1,1 @@
-Folder to practice JavaScript.
+Directory to practice JavaScript.
