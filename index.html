@@ -4,57 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+          font-size: 2em;
+          margin: 10px 1px 0;
+        }
+      </style>
 </head>
 <body>
-    <button>Start machine</button>
-    <p>The machine is stopped</p>
-<script>
-    /*
-    //Initial greeting:
-    console.log('Hello!');
-   /* //Button task:
-const btn = document.querySelector('button');
-const txt = document.querySelector('p');
-btn.addEventListener('click', updateBtn);
-function updateBtn() {
-    if (btn.textContent === 'Start machine') {
-        btn.textContent = 'Stop machine';
-        txt.textContent = 'The machine has started!';
-    } else {
-        btn.textContent = 'Start machine';
-        txt.textContent = 'The machine is stopped';
-    }
+    <input class="numberInput" type="text">
+    <p></p>
+  
+    <script>
+      const input = document.querySelector('.numberInput');
+      const para = document.querySelector('p');
+      
+      function squared(num) {
+  return num * num;
 }
-*/
 
-/*
-//Button input task:
-const button = document.querySelector('button');
-
-button.onclick = function() {
-    let name = prompt('What is your name?');
-    alert('Hello'+name+', nice to see you!');
+function cubed(num) {
+  return num * num * num;
 }
-*/
 
-//Password prompt task:
-let userName = prompt("Input your name", "");
-if (userName === "Admin") {
-    let pass = prompt("Password?", "");
-    if (pass === "TheMaster") {
-        alert ("Welcome!");
-    } else if (pass === "" || pass === null) {
-        alert("Canceled");
-    } else {
-        alert ("Wrong password");
-    }
-    }
-
-else if (userName === "" || userName === null) {
-alert ("Canceled");
-} else {
-    alert("I don't know you");
+function factorial(num) {
+  if (num < 0) return undefined;
+  if (num == 0) return 1;
+  let x = num - 1;
+  while (x > 1) {
+    num *= x;
+    x--;
+  }
+  return num;
 }
-</script>
+      input.onchange = function() {
+  const num = input.value;
+  if (isNaN(num)) {
+    para.textContent = 'You need to enter a number!';
+  } else {
+    para.textContent = num + ' squared is ' + squared(num) + '. ' +
+                       num + ' cubed is ' + cubed(num) + '. ' +
+                       num + ' factorial is ' + factorial(num) + '.';
+  }
+}
+    </script>
 </body>
 </html>
