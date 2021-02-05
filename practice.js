@@ -76,3 +76,40 @@ function fakeAjax(url,cb) {
 		]);
 	},500);
 }
+
+
+////Frontend Masters Task #3
+//Phone purchase:
+
+const phonePrice = 99.99;
+const accessoryPrice = 9.99;
+const phoneTax = 0.08;
+const spendingThreshold = 200;
+
+var bankBalance = 2000;
+var amount = 0;
+
+function calculateTax(amount){
+  return amount * phoneTax;
+}
+
+function formatAmount(amount){
+  return "$" + amount.toFixed(2);
+}
+
+//keep buying till we have money left
+while
+(amount < bankBalance) {
+  amount = amount + phonePrice;
+  //can we afford the accessory?
+  if(amount < spendingThreshold){
+  amount = amount + accessoryPrice;
+}
+}
+amount = amount + calculateTax(amount);
+
+console.log("Your purchase: " + formatAmount(amount));
+
+if (amount > bankBalance) {
+  console.log("You can't afford this purchase ");
+}
