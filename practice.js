@@ -85,8 +85,8 @@ const phonePrice = 99.99;
 const accessoryPrice = 9.99;
 const phoneTax = 0.08;
 const spendingThreshold = 200;
+const bankBalance = 2000;
 
-var bankBalance = 2000;
 var amount = 0;
 
 function calculateTax(amount){
